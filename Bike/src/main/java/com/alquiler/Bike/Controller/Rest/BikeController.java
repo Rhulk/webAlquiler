@@ -82,6 +82,7 @@ public class BikeController {
 		LocalDate desde2 = LocalDate.parse("2021-03-10");
 		LocalDate hasta2 = LocalDate.parse("2021-03-15");
 	*/	
+		bicis.clear();// que se acumulan las peticiones
 		List<Bike> allBike =bikeService.todas();
 		List<Reserva> allReservas = reservasService.reservasEntreFechas(LocalDate.parse(desde1), LocalDate.parse(hasta1));
 		

@@ -238,6 +238,10 @@ $(document).ready(function(){
         clearHorasHasta();
         document.getElementById("idBike").focus();
         
+        console.log("Fecha desde: "+document.getElementById("dp1").value);
+        console.log("Fecha Hasta: "+document.getElementById("dp2").value);
+       
+        console.log("http://localhost:8080/disponibles?fechaInicio="+document.getElementById("dp1").value+"&fechafin="+document.getElementById("dp2").value)
 	    $.ajax({
 	        url: "http://localhost:8080/disponibles?fechaInicio="+
 	        document.getElementById("dp1").value+
@@ -247,12 +251,14 @@ $(document).ready(function(){
 	    	console.log(" URL: "+url)
 	    	data=null;
 	    });
-	
+		
         
 
     }
     
     function disponibles(desde, hasta){
+    	
+    		console.log("Aqui no");
     	
     	    $.ajax({
     	        url: "http://localhost:8080/disponibles?fechaInicio="+desde+"&fechafin="+hasta
