@@ -17,9 +17,6 @@ public class BikeDisponiblesService implements IBikeDisponibles{
 	@Override
 	public List<Bike> todas() {
 		List<Bike> lista = bikeRepo.findAll();
-
-		System.out.println(" todas");
-		System.out.println(lista.toString());
 		return lista;
 	}
 

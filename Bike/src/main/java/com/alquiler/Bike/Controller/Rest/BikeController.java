@@ -53,7 +53,6 @@ public class BikeController {
 	}
 	@GetMapping("/allBike")
 	public List<Bike> allBike(){
-		System.out.println(" allBike");
 		return bikeService.todas();
 	}
 	
@@ -86,25 +85,32 @@ public class BikeController {
 		List<Bike> allBike =bikeService.todas();
 		List<Reserva> allReservas = reservasService.reservasEntreFechas(LocalDate.parse(desde1), LocalDate.parse(hasta1));
 		
-		for (int x=0; x <= allBike.size()-1; x++) {
-			System.out.println(" Bike: "+x+" de : "+allBike.size());
-			System.out.println(" Bike? "+allBike.get(x));
-			for (int y=0; y <= allReservas.size()-1; y++) {
-				System.out.println(" Reserva: "+y+" de : "+allReservas.size());
-				if (allBike.get(x).getId_bike() == allReservas.get(y).getId_bike()) {
-					y=allReservas.size();
-					System.out.println(" Bici reservada -->> "+allBike.get(y).toString());
-				}else {
-					if(allReservas.size()-1 == y) {
-						System.out.println(" Bici DISPONIBLE : "+allBike.get(x));
-						bicis.add(allBike().get(x)); // add Bike disponible
+		if (allReservas.size()>0) {
+			
+
+			for (int x=0; x <= allBike.size()-1; x++) {
+				System.out.println(" Bike: "+x+" de : "+allBike.size());
+				System.out.println(" Bike? "+allBike.get(x));
+				for (int y=0; y <= allReservas.size()-1; y++) {
+					System.out.println(" Reserva: "+y+" de : "+allReservas.size());
+					if (allBike.get(x).getId_bike() == allReservas.get(y).getId_bike()) {
+						y=allReservas.size();
+						System.out.println(" Bici reservada -->> "+allBike.get(y).toString());
+					}else {
+						if(allReservas.size()-1 == y) {
+							System.out.println(" Bici DISPONIBLE : "+allBike.get(x));
+							bicis.add(allBike().get(x)); // add Bike disponible
+						}
 					}
 				}
-			}
-			
-		}		
-		System.out.println("Bicis disponibles: >>>>> "+bicis);
+				
+			}		
+			System.out.println("Bicis disponibles: >>>>> "+bicis);
 	
+		}else{
+			System.out.println(" -- No hay reservas para la fecha --- Todas las bicis disponibles -- Borrar Fin Testeo --");
+			bicis = allBike;
+		}
 		return bicis;
 	}
 	
