@@ -20,7 +20,14 @@ public class Reserva {
 	private int id_persona;
 	private LocalDate fechaDesde;
 	private LocalDate fechaHasta;
+	private LocalDate fecha;
 	
+	public LocalDate getFecha() {
+		return fecha;
+	}
+	public void setFecha(LocalDate fecha) {
+		this.fecha = fecha;
+	}
 	public int getId_reserva() {
 		return id_reserva;
 	}
@@ -54,8 +61,9 @@ public class Reserva {
 	@Override
 	public String toString() {
 		return "Reserva [id_reserva=" + id_reserva + ", id_bike=" + id_bike + ", id_persona=" + id_persona
-				+ ", fechaDesde=" + fechaDesde + ", fechaHasta=" + fechaHasta + "]";
+				+ ", fechaDesde=" + fechaDesde + ", fechaHasta=" + fechaHasta + ", fecha=" + fecha + "]";
 	}
+
 	
 	
 	
