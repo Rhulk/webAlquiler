@@ -89,16 +89,16 @@ public class BikeController {
 			
 
 			for (int x=0; x <= allBike.size()-1; x++) {
-				System.out.println(" Bike: "+x+" de : "+allBike.size());
-				System.out.println(" Bike? "+allBike.get(x));
+				//System.out.println(" Bike: "+x+" de : "+allBike.size());
+				//System.out.println(" Bike? "+allBike.get(x));
 				for (int y=0; y <= allReservas.size()-1; y++) {
-					System.out.println(" Reserva: "+y+" de : "+allReservas.size());
+					//System.out.println(" Reserva: "+y+" de : "+allReservas.size());
 					if (allBike.get(x).getId_bike() == allReservas.get(y).getId_bike()) {
 						y=allReservas.size();
-						System.out.println(" Bici reservada -->> "+allBike.get(y).toString());
+						//System.out.println(" Bici reservada -->> "+allBike.get(y).toString());
 					}else {
 						if(allReservas.size()-1 == y) {
-							System.out.println(" Bici DISPONIBLE : "+allBike.get(x));
+							//System.out.println(" Bici DISPONIBLE : "+allBike.get(x));
 							bicis.add(allBike().get(x)); // add Bike disponible
 						}
 					}
