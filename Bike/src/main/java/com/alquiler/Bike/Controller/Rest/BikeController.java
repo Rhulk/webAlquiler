@@ -106,10 +106,10 @@ public class BikeController {
 				}
 				
 			}		
-			System.out.println("Bicis disponibles: >>>>> "+bicis);
+			//System.out.println("Bicis disponibles: >>>>> "+bicis);
 	
 		}else{
-			System.out.println(" -- No hay reservas para la fecha --- Todas las bicis disponibles -- Borrar Fin Testeo --");
+			//System.out.println(" -- No hay reservas para la fecha --- Todas las bicis disponibles -- Borrar Fin Testeo --");
 			bicis = allBike;
 		}
 		return bicis;

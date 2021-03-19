@@ -29,10 +29,10 @@ public class BikeReservasService implements IBikeReservas {
 
 	@Override
 	public List<Reserva> reservasEntreFechas(LocalDate desde1, LocalDate hasta1) {
-		System.out.println(" -- [ Reservas entre fechas: "+desde1+ " -|- "+hasta1+"\n");
+		//System.out.println(" -- [ Reservas entre fechas: "+desde1+ " -|- "+hasta1+"\n");
 		//System.out.println(reservasRepo.findByFechaDesdeGreaterThanEqualAndFechaHastaLessThanEqual(desde1, hasta1)+"\n");
-		System.out.println(reservasRepo.findByFechaBetween(desde1, hasta1)+"\n");
-		System.out.println(" -- Fin Reservas -- Borrar Fin Test --\n");
+		//System.out.println(reservasRepo.findByFechaBetween(desde1, hasta1)+"\n");
+		//System.out.println(" -- Fin Reservas -- Borrar Fin Test --\n");
 		return reservasRepo.findByFechaBetween(desde1, hasta1);
 	}
 
