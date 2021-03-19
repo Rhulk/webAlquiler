@@ -13,5 +13,6 @@ public interface BikeReservasRepo extends JpaRepository<Reserva, Integer>{
 	
     public List<Reserva> findByFechaDesdeBefore(Date fecha_desde);
     public List<Reserva> findByFechaDesdeGreaterThanEqualAndFechaHastaLessThanEqual(LocalDate desde , LocalDate hasta);
+    public List<Reserva> findByFechaBetween(LocalDate desde , LocalDate hasta);
 
 }
