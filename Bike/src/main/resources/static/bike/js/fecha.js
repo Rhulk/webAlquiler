@@ -248,12 +248,33 @@ $(document).ready(function(){
 	        "&fechafin="+document.getElementById("dp2").value
 	    }).then(function(data) {
 	    	console.log(data)
-	    	console.log(" URL: "+url)
-	    	data=null;
+	    	bikes =data;
+	    	console.log(data.nombre)
+	    	
+	    	
+	    	
+	    	loadBikeDisponiblesEntreFechas();
 	    });
 		
         
 
+    }
+    var bikes;
+   // var datas = ["Banana", "Orange", "Apple", "Mango"];
+
+    function loadBikeDisponiblesEntreFechas() {
+    	console.log(" -- ");
+      
+      bikes.forEach(function(bike) {
+    	  console.log(" --> "+bike)
+    	  	     $('#idBike').append($('<option>',
+    	  	    	     {
+    	  	    	        value: bike.id_bike,
+    	  	    	        text : "Bike: "+bike.nombre
+    	  	    	    }));
+    	  
+  
+      });
     }
     
     function disponibles(desde, hasta){
