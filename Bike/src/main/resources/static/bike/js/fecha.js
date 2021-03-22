@@ -264,9 +264,10 @@ $(document).ready(function(){
 
     function loadBikeDisponiblesEntreFechas() {
     	console.log(" -- ");
-      
+       $('#idBike').find('option').not(':first').remove();
       bikes.forEach(function(bike) {
     	  console.log(" --> "+bike)
+    	  		
     	  	     $('#idBike').append($('<option>',
     	  	    	     {
     	  	    	        value: bike.id_bike,
