@@ -262,6 +262,12 @@ $(document).ready(function(){
 	    	
 	    	
 	    	loadBikeDisponiblesEntreFechas();
+	    	//console.log(diasEntreFechas(moment(document.getElementById("dp1").value),
+	    		//	moment(document.getElementById("dp2").value));
+
+	    	var rangoFechas = diasEntreFechas(moment(document.getElementById("dp1").value), 
+	    			moment(document.getElementById("dp2").value));
+	    	console.log(rangoFechas);
 	    });
 		
         
@@ -346,6 +352,19 @@ function info(id){
     const inf = ficha[id-1].cuerpo;
     datosTecnicos.innerHTML = inf;
 }
+
+
+var diasEntreFechas = function(desde, hasta) {
+  	var dia_actual = desde;
+    var fechas = [];
+  	while (dia_actual.isSameOrBefore(hasta)) {
+    	fechas.push(dia_actual.format('YYYY-MM-DD'));
+   		dia_actual.add(1, 'days');
+  	}
+  	return fechas;
+};
+
+
 
 
     
