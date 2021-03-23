@@ -135,11 +135,7 @@
         <div>
             <select id="idBike" name="bike" class="select-css" onchange="loadBike()">
                 <option id="id_bike" value="0">Bici elegida</option>
-                <option  value="1">Specialized TURBO LEVO COMP 29 MTB E-Bike</option>
-                <option  value="2">Bike 2</option>
-                <option  value="3">Bike 3</option>
-                <option  value="4">Bike 4</option>   
-                <option  value="5">Bike 5</option>
+                <option  value="1">Selecciona las fechas de la reserva previamente...</option> <!--  Se genera automaticamente desde fecha.js -->
               </select>
         </div>
         <div>
@@ -172,18 +168,7 @@
           </div>
       </div>
  
-       <table id="tabla">
-        <thead>
-          <tr>
-            <th>Select</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-      <button type="button" onClick="loadBikeDisponiblesEntreFechas();">Generar select. Mod VS </button>   
-      
-      <select id='selectBike'></select>  
+
       
     </form>
 
@@ -242,14 +227,17 @@
     <!-- ractive -->
     <script src='https://cdn.jsdelivr.net/npm/ractive@0.9'></script>
 
-    <!-- Script Propios-->
+    <!-- Script Propios
     <script src="/bike/js/fecha.js"> </script>
     <script src="/bike/js/select.js"></script>
+    -->
+    <script src="/bike/js/general.js"></script>
+    
     <script src="/bike/js/formulario.js"></script>
     <script src="/bike/js/menu.js"></script>
     
-       <!-- Test Carga select bike automatico-->
+       <!-- Test Carga select bike automatico
     	<script src="/bike/js/select_auto.js"></script>
-    
+   		-->
 </body>
 </html>
