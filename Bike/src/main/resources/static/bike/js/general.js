@@ -355,11 +355,11 @@ function info(id){
 
 
 var diasEntreFechas = function(desde, hasta) {
-  	var dia_actual = desde;
+
     var fechas = [];
-  	while (dia_actual.isSameOrBefore(hasta)) {
-    	fechas.push(dia_actual.format('YYYY-MM-DD'));
-   		dia_actual.add(1, 'days');
+  	while (desde.isSameOrBefore(hasta)) {
+    	fechas.push(desde.format('YYYY-MM-DD'));
+   		desde.add(1, 'days');
   	}
   	return fechas;
 };
