@@ -8,8 +8,8 @@ const input = document.querySelector('input');
 
 console.log('select.js');
 
-const test = document.form.bike.length
-const indice = document.form.bike.selectedIndex
+
+
 const datosTecnicos = document.getElementById("infoTecnica");
 
 console.log('fin select');
