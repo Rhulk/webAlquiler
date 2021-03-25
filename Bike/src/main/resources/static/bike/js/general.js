@@ -364,6 +364,30 @@ var diasEntreFechas = function(desde, hasta) {
   	return fechas;
 };
 
+function data(){
+	console.log('data');
+	var selectHoraInicio =document.getElementById("selectHoraInicio").textContent;
+	var selectHoraHasta =document.getElementById("selectHoraHasta").textContent;
+	var idLugar = document.getElementById("idLugar").options[document.getElementById("idLugar").selectedIndex].text;
+	var idTalla = document.getElementById("idTalla").options[document.getElementById("idTalla").selectedIndex].text;
+	var idBike = document.getElementById("idBike").options[document.getElementById("idBike").selectedIndex].text;
+	var idPedal = document.getElementById("idBike").options[document.getElementById("idPedal").selectedIndex].text;
+	var idCasco = document.getElementById("idCasco").options[document.getElementById("idCasco").selectedIndex].text;
+	
+
+	
+	console.log(selectHoraInicio);
+	console.log(selectHoraHasta);
+	console.log(idLugar);
+	console.log(idLugar);
+	console.log(idBike);
+	console.log(idTalla);
+	console.log(idPedal);
+	console.log(idCasco);
+
+	
+
+}
 
 
 
