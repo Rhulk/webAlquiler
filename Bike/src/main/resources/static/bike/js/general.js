@@ -373,15 +373,16 @@ function data(){
 	var idBike = document.getElementById("idBike").options[document.getElementById("idBike").selectedIndex].text;
 	var idPedal = document.getElementById("idBike").options[document.getElementById("idPedal").selectedIndex].text;
 	var idCasco = document.getElementById("idCasco").options[document.getElementById("idCasco").selectedIndex].text;
-	
+	var rangoFechas = diasEntreFechas(moment(document.getElementById("dp1").value), moment(document.getElementById("dp2").value));
+	    	
 
 	
 	console.log(selectHoraInicio);
+	console.log(rangoFechas);	
 	console.log(selectHoraHasta);
 	console.log(idLugar);
-	console.log(idLugar);
-	console.log(idBike);
 	console.log(idTalla);
+	console.log(idBike);
 	console.log(idPedal);
 	console.log(idCasco);
 
