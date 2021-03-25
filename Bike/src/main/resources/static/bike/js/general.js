@@ -4,6 +4,8 @@ const fecha = document.getElementById("dp1").value;
 const fechaFin = document.getElementById("dp2").value;
 
 
+
+
 const input = document.querySelector('input');
 
 console.log('select.js');
@@ -364,16 +366,46 @@ var diasEntreFechas = function(desde, hasta) {
   	return fechas;
 };
 
+function reserva(){
+	
+	console.log('pepe')
+}
+
 function data(){
 	console.log('data');
 	var selectHoraInicio =document.getElementById("selectHoraInicio").textContent;
 	var selectHoraHasta =document.getElementById("selectHoraHasta").textContent;
 	var idLugar = document.getElementById("idLugar").options[document.getElementById("idLugar").selectedIndex].text;
 	var idTalla = document.getElementById("idTalla").options[document.getElementById("idTalla").selectedIndex].text;
-	var idBike = document.getElementById("idBike").options[document.getElementById("idBike").selectedIndex].text;
+	var idBike = document.getElementById("idBike").options[document.getElementById("idBike").selectedIndex].value;
 	var idPedal = document.getElementById("idBike").options[document.getElementById("idPedal").selectedIndex].text;
 	var idCasco = document.getElementById("idCasco").options[document.getElementById("idCasco").selectedIndex].text;
-	var rangoFechas = diasEntreFechas(moment(document.getElementById("dp1").value), moment(document.getElementById("dp2").value));
+	var rangoFechas = diasEntreFechas(
+			moment(document.getElementById("dp1").value)
+			, moment(document.getElementById("dp2").value)
+			);
+	
+/*	rangoFechas.forEach(
+			fecha => console.log(fecha);	
+	);
+*/	
+	var i;
+	for (i = 0; i < rangoFechas.length; i++) {
+	  
+	  console.log(rangoFechas[i]+' <<-- Fecha');
+		$.ajax({
+			  method: "POST",
+			  url: "http://localhost:8080/altaReservas",
+			  data: { 'id_bike': idBike , 'fecha': rangoFechas[i]  }
+			});
+	  
+	}
+	
+	$.ajax({
+		  method: "POST",
+		  url: "http://localhost:8080/altaReservas",
+		  data: { 'id_bike': idBike , 'fecha': fecha  }
+		});
 	    	
 
 	
