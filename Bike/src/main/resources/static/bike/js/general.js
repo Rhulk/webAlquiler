@@ -402,7 +402,8 @@ function data(){
 			  success: function (respuesta) {
 
                         if (respuesta == true) {
-                            
+                        	location="http://localhost:8080/bike/alquilerSuccess.html";
+                            bike/alquilerSuccess.html
                              console.log('Exito');
                         } else if (respuesta== false){
                             console.log('fallo');

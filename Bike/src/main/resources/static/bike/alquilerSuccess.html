@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css"> <!-- Problema bajo del sobre-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
+    
+
+    <!-- Propios CSS -->
+    <link href="/bike/css/fecha.css" rel="stylesheet"  crossorigin="anonymous">
+    <link href="/bike/css/select.css" rel="stylesheet"  crossorigin="anonymous">
+    <link href="/bike/css/form.css" rel="stylesheet"  crossorigin="anonymous">
+    <link href="/bike/css/menu.css" rel="stylesheet" crossorigin="anonymous">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
+
+<title> Success </title>
+</head>
+
+<header>
+	<nav class="navbar navbar-default navbar-fixed-top tm_navbar ">
+
+		<ul>
+      <li>
+        <a class="navbar-logo" href="#">
+          <img src="imagen/bike/logo_bbb_white.png" alt="logo"></img>
+        </a>
+      </li>
+			<li ><a id="id_alquiler" href="/bike/alquiler.html">Alquiler Bike</a></li>
+			<li ><a id="id_tarifas" href="#">Tarifas</a></li>
+			<li ><a id="id_rutas" href="#">Rutas</a></li>
+			<li ><a id="id_contacto" href="/bike/contac.html">Contacto</a></li>
+		</ul>
+  
+    <dl class="idioma">
+      <dd class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Idioma</a>
+        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+          <a id="idioma_1" class="dropdown-item-idioma" href="#" onclick="getIdioma(this.id)">Castellano</a>
+          <a id="idioma_2" class="dropdown-item-idioma" href="#" onclick="getIdioma(this.id)">Ingles</a>
+          <a id="idioma_3" class="dropdown-item-idioma" href="#" onclick="getIdioma(this.id)">Frances</a>      
+          <a id="idioma_4" class="dropdown-item-idioma" href="#" onclick="getIdioma(this.id)">Aleman</a>
+          <a id="idioma_5" class="dropdown-item-idioma" href="#" onclick="getIdioma(this.id)">Portugues</a>   
+        </div>
+        
+      </dd>
+    </dl>
+    <div id="mostrarIdioma" class="idioma-activo">  Castellano  </div>
+	</nav>
+
+  
+</header>
+
+<body>
+
+<h1> Success </h1>
+
+    <!-- ractive -->
+    <script src='https://cdn.jsdelivr.net/npm/ractive@0.9'></script>
+    
+    <!--  moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.3/moment.min.js"></script>
+
+    <!-- Script Propios
+    <script src="/bike/js/fecha.js"> </script>
+    <script src="/bike/js/select.js"></script>
+    -->
+    <script src="/bike/js/general.js"></script>
+    
+    <script src="/bike/js/formulario.js"></script>
+    <script src="/bike/js/menu.js"></script>
+    
+       <!-- Test Carga select bike automatico
+    	<script src="/bike/js/select_auto.js"></script>
+   		-->
+</body>
+</html>
