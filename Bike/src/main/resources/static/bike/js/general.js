@@ -368,7 +368,9 @@ var diasEntreFechas = function(desde, hasta) {
 
 function reserva(){
 	
-	console.log('pepe')
+	console.log('pepe');
+	location="http://www.cristalab.com";
+	console.log('pepe 2');
 }
 
 function data(){
@@ -397,7 +399,20 @@ function data(){
 			  method: "POST",
 			  url: "http://localhost:8080/altaReservas",
 			  data: { 'id_bike': idBike , 'fecha': rangoFechas[i]  },
-			  success: reserva
+			  success: function (respuesta) {
+
+                        if (respuesta == true) {
+                            
+                             console.log('Exito');
+                        } else if (respuesta== false){
+                            console.log('fallo');
+                        }
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                         console.log('Error');
+                    }
+
+			  
 			});
 	  
 	}

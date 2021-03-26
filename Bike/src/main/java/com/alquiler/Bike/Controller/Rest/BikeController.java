@@ -75,11 +75,11 @@ public class BikeController {
 	}
 	
 	@PostMapping("/altaReservas")
-	String altaReservas(String id_bike, String fecha) {
+	boolean altaReservas(String id_bike, String fecha) {
 		System.out.println(" Alta Reserva");
 		System.out.println("-- Id Bike: "+ id_bike+" -- Fecha reserva: "+fecha+" -- \n");
 		
-		return "Pedo loco";
+		return true;
 	}
 	
 	@GetMapping("/disponibles")
