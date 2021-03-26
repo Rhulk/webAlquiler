@@ -75,9 +75,9 @@ public class BikeController {
 	}
 	
 	@PostMapping("/altaReservas")
-	String altaReservas(Reserva reserva) {
+	String altaReservas(String id_bike, String fecha) {
 		System.out.println(" Alta Reserva");
-		System.out.println("-- Id Bike: "+ reserva.getId_bike()+" -- Fecha reserva: "+reserva.getFecha()+" -- \n");
+		System.out.println("-- Id Bike: "+ id_bike+" -- Fecha reserva: "+fecha+" -- \n");
 		
 		return "Pedo loco";
 	}

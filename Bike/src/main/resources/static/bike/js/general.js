@@ -372,7 +372,7 @@ function reserva(){
 }
 
 function data(){
-	console.log('data');
+	console.log('Enviadas Peticiones Post -->>');
 	var selectHoraInicio =document.getElementById("selectHoraInicio").textContent;
 	var selectHoraHasta =document.getElementById("selectHoraHasta").textContent;
 	var idLugar = document.getElementById("idLugar").options[document.getElementById("idLugar").selectedIndex].text;
@@ -392,7 +392,7 @@ function data(){
 	var i;
 	for (i = 0; i < rangoFechas.length; i++) {
 	  
-	  console.log(rangoFechas[i]+' <<-- Fecha');
+	//  console.log(rangoFechas[i]+' <<-- Fecha enviada -->>');
 		$.ajax({
 			  method: "POST",
 			  url: "http://localhost:8080/altaReservas",
@@ -401,14 +401,7 @@ function data(){
 	  
 	}
 	
-	$.ajax({
-		  method: "POST",
-		  url: "http://localhost:8080/altaReservas",
-		  data: { 'id_bike': idBike , 'fecha': fecha  }
-		});
-	    	
-
-	
+/*
 	console.log(selectHoraInicio);
 	console.log(rangoFechas);	
 	console.log(selectHoraHasta);
@@ -418,7 +411,7 @@ function data(){
 	console.log(idPedal);
 	console.log(idCasco);
 
-	
+	*/
 
 }
 
