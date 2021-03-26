@@ -396,7 +396,8 @@ function data(){
 		$.ajax({
 			  method: "POST",
 			  url: "http://localhost:8080/altaReservas",
-			  data: { 'id_bike': idBike , 'fecha': rangoFechas[i]  }
+			  data: { 'id_bike': idBike , 'fecha': rangoFechas[i]  },
+			  success: reserva
 			});
 	  
 	}
