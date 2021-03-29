@@ -392,7 +392,7 @@ function data(){
 	);
 */	
 	var i;
-	for (i = 0; i < rangoFechas.length; i++) {
+	for (i = 1; i <= rangoFechas.length; i++) {
 	  
 	//  console.log(rangoFechas[i]+' <<-- Fecha enviada -->>');
 		$.ajax({
@@ -402,9 +402,10 @@ function data(){
 			  success: function (respuesta) {
 
                         if (respuesta == true) {
-                        	location="http://localhost:8080/bike/alquilerSuccess.html";
-                            bike/alquilerSuccess.html
-                             console.log('Exito');
+                        	if (i == rangoFechas.length){
+	                        	location="http://localhost:8080/bike/alquilerSuccess.html";
+                        	}
+                        	console.log('Exito');
                         } else if (respuesta== false){
                             console.log('fallo');
                         }
