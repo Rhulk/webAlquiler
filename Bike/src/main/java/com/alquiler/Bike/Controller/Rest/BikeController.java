@@ -3,6 +3,7 @@ package com.alquiler.Bike.Controller.Rest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -78,6 +79,16 @@ public class BikeController {
 	boolean altaReservas(String id_bike, String fecha) {
 		System.out.println(" Alta Reserva");
 		System.out.println("-- Id Bike: "+ id_bike+" -- Fecha reserva: "+fecha+" -- \n");
+		Reserva reserva = new Reserva();
+
+		//reserva.setFecha(LocalDate.parse(fecha, DateTimeFormatter.ofPattern("yyyy-mm-dd")));
+		//reserva.setFecha(LocalDate.parse("2021-07-07", DateTimeFormatter.ofPattern("yyyy-mm-dd")));
+		reserva.setFecha(LocalDate.parse(fecha));
+		reserva.setId_bike(Integer.parseInt(id_bike));
+		reserva.setId_persona(69);
+		
+		reservasService.createReserva(reserva);//JPA
+
 		
 		return true;
 	}

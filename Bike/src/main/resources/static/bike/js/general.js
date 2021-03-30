@@ -394,18 +394,20 @@ function data(){
 	var i;
 	for (i = 1; i <= rangoFechas.length; i++) {
 	  
-	//  console.log(rangoFechas[i]+' <<-- Fecha enviada -->>');
+	  console.log(rangoFechas[i-1]+' <<-- Fecha enviada -->> '+i);
 		$.ajax({
 			  method: "POST",
 			  url: "http://localhost:8080/altaReservas",
-			  data: { 'id_bike': idBike , 'fecha': rangoFechas[i]  },
+			  data: { 'id_bike': idBike , 'fecha': rangoFechas[i-1]  },
 			  success: function (respuesta) {
 
                         if (respuesta == true) {
-                        	if (i == rangoFechas.length){
-	                        	location="http://localhost:8080/bike/alquilerSuccess.html";
-                        	}
-                        	console.log('Exito');
+                        	console.log('i:'+i);
+                        	
+	                        	//location="http://localhost:8080/bike/alquilerSuccess.html";
+	                        	console.log('Redirección tras petición post');
+                        	
+                        	console.log('Respuesta post [OK]');
                         } else if (respuesta== false){
                             console.log('fallo');
                         }

@@ -36,4 +36,15 @@ public class BikeReservasService implements IBikeReservas {
 		return reservasRepo.findByFechaBetween(desde1, hasta1);
 	}
 
+	@Override
+	public boolean createReserva(Reserva reserva) {
+		try {
+			reservasRepo.save(reserva);
+		}catch (Exception e) {
+			return false;
+		}
+		
+		return true;
+	}
+
 }

@@ -12,5 +12,5 @@ public interface IBikeReservas {
 	List<Reserva> allReservasActivas();
 	List<Reserva> reservasEntreFechas(LocalDate desde, LocalDate hasta);
 	
-
+	boolean createReserva(Reserva reserva);
 }
