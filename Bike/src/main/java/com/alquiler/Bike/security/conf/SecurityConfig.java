@@ -19,14 +19,17 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	
-	// falta la pagina para redireccionar si no hay permisos
+	// Auth in Memory
 	@Override		
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication()
 		.withUser("user").password("{noop}1234").roles("USER")
 		.and()
 		.withUser("admin").password("{noop}1234").roles("ADMIN");
-	}	
+	}
+	
+	
+
 	
     @Override
     public void configure(HttpSecurity http) throws Exception {
