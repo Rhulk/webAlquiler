@@ -3,10 +3,11 @@ package com.alquiler.Bike.security.conf;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;	
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import javax.sql.DataSource;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -18,8 +19,21 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableWebSecurity	
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
+	@Autowired
+	private DataSource dataSource;
 	
-	// Auth in Memory
+	/* Auth in DDBB */
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.jdbcAuthentication().dataSource(dataSource)
+		.usersByUsernameQuery("select username, password, estatus from users where username=?")
+		.authoritiesByUsernameQuery("select u.username, au.authority from UsuarioPerfil up " +
+		"inner join users u on u.id = up.idUsuario " +
+		"inner join authorities au on au.id = up.idPerfil " +
+		"where u.username = ?");
+	}
+	
+	/* Auth in Memory
 	@Override		
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication()
@@ -27,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.and()
 		.withUser("admin").password("{noop}1234").roles("ADMIN");
 	}
-	
+	*/
 	
 
 	
