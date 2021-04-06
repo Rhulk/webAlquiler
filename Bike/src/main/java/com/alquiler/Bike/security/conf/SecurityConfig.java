@@ -26,13 +26,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private DataSource dataSource;
 	
 
-	
+/*	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
     
-    
+ */   
 	
 	/* Auth in DDBB */
 	@Override
@@ -61,7 +61,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
         	.antMatchers("/contac").hasRole("ADMIN")
-            .antMatchers("/").hasRole("USER")
+            .antMatchers("/").hasRole("cl")
             .and().formLogin()
             .and().logout();
     }
